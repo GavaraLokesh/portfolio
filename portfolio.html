@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokesh Kumar Gavara - Machine Learning Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradientBG 3s ease infinite;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+        }
+
+        .card-hover:hover {
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .skill-bar {
+            transition: width 1.5s ease-in-out;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #38bdf8;
+            border: 3px solid #0f172a;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Animated Background Particles -->
+    <div id="particles-js" class="fixed top-0 left-0 w-full h-full z-0"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold gradient-text">Lokesh Gavara</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-cyan-400 transition-colors relative group">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#about" class="hover:text-cyan-400 transition-colors relative group">
+                    About
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors relative group">
+                    Skills
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors relative group">
+                    Projects
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors relative group">
+                    Contact
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-2xl">
+                <i class='bx bx-menu'></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden fixed w-full bg-gray-900 top-16 hidden z-40 border-b border-gray-800">
+        <div class="flex flex-col items-center py-4 space-y-4">
+            <a href="#home" class="py-2 px-4 hover:bg-gray-800 w-full text-center">Home</a>
+            <a href="#about" class="py-2 px-4 hover:bg-gray-800 w-full text-center">About</a>
+            <a href="#skills" class="py-2 px-4 hover:bg-gray-800 w-full text-center">Skills</a>
+            <a href="#projects" class="py-2 px-4 hover:bg-gray-800 w-full text-center">Projects</a>
+            <a href="#contact" class="py-2 px-4 hover:bg-gray-800 w-full text-center">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen pt-32 px-6 relative z-10">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-12 md:mb-0 fade-in" style="transform: translateY(30px);">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="gradient-text">Lokesh Kumar Gavara</span></h2>
+                <p class="text-xl md:text-2xl mb-6 text-gray-300">Artificial Inteligence /Machine Learning Engineer</p>
+                <p class="text-lg mb-8 text-gray-400 max-w-lg">Emerging Expertise in Machine Learning</p>
+                <div class="flex space-x-4">
+                </div>
+                <div class="flex mt-8 space-x-4">
+                    <a href="https://www.linkedin.com/in/gavara-lokesh-kumar-b1a4b7258/" target="_blank" class="text-2xl hover:text-cyan-400 transition-colors">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                    <a href="https://github.com/GavaraLokesh" target="_blank" class="text-2xl hover:text-cyan-400 transition-colors">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center fade-in" style="transform: translateY(30px);">
+                <div class="relative">
+                    <img src="images\beast.jpg" alt="Lokesh Kumar Gavara" 
+                         class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-cyan-500 object-cover shadow-xl float-animation">
+                    <div class="absolute -bottom-5 -right-5 bg-gray-800 p-3 rounded-full border border-gray-700 shadow-lg">
+                        <div class="bg-gradient-to-r from-cyan-500 to-blue-600 p-2 rounded-full animate-pulse">
+                            <i class='bx bx-code-alt text-xl'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gray-900/50 relative z-10">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">About <span class="gradient-text">Me</span></h2>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2 fade-in">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Objective</h3>
+                    <p class="text-gray-300 mb-6">
+                        Seeking a dynamic role as a Machine Learning Engineer in a forward-thinking organization where I can apply my skills in deep learning, computer vision, and data analytics to create intelligent, data-driven solutions. I aim to contribute to cutting-edge AI initiatives while advancing my expertise in emerging machine learning technologies and their practical applications.
+                    </p>
+                    <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 card-hover">
+                        <h3 class="text-xl font-semibold mb-4 text-cyan-400">Personal Info</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-gray-400">Name:</p>
+                                <p class="text-gray-200">Lokesh Kumar Gavara</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Email:</p>
+                                <p class="text-gray-200">loki@gmail.com</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Phone:</p>
+                                <p class="text-gray-200">+91-6304555234</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Location:</p>
+                                <p class="text-gray-200">Visakhapatnam, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 fade-in">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Education</h3>
+                    <div class="relative">
+                        <div class="border-l-2 border-gray-700 pl-8 space-y-8">
+                            <div class="relative timeline-item">
+                                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 card-hover">
+                                    <h4 class="font-semibold text-lg">Bachelor of Technology in Computer Science</h4>
+                                    <p class="text-gray-400">Lovely Professional University, Jalandhar</p>
+                                    <p class="text-gray-400">CGPA: 6</p>
+                                    <p class="text-gray-400">2022</p>
+                                </div>
+                            </div>
+                            <div class="relative timeline-item">
+                                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 card-hover">
+                                    <h4 class="font-semibold text-lg">Intermediate</h4>
+                                    <p class="text-gray-400">Sri Narayana Junior College, Visakhapatnam</p>
+                                    <p class="text-gray-400">Percentage: 88%</p>
+                                </div>
+                            </div>
+                            <div class="relative timeline-item">
+                                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 card-hover">
+                                    <h4 class="font-semibold text-lg">Matriculation</h4>
+                                    <p class="text-gray-400">Sri Bhashyam High School, Visakhapatnam</p>
+                                    <p class="text-gray-400">Percentage: 98%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 relative z-10">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">My <span class="gradient-text">Skills</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="fade-in">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Programming Languages</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Python</span>
+                                <span class="text-gray-400">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">C++</span>
+                                <span class="text-gray-400">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2.5">
+                                <div class="bg-cyan-500 h-2.5 rounded-full skill-bar" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Tools & Technologies</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700 hover:bg-cyan-500/10 hover:border-cyan-500 transition-colors">GitHub</span>
+                        <span class="px-4 py-2 bg-gray-800/50 rounded-full border border-gray-700 hover:bg-cyan-500/10 hover:border-cyan-500 transition-colors">SQL</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fade-in">
+                <h3 class="text-xl font-semibold mb-4 text-cyan-400">Libraries & Frameworks</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700 flex items-center space-x-3 card-hover">
+                        <i class='bx bxl-python text-3xl text-blue-400'></i>
+                        <span>NumPy</span>
+                    </div>
+                    <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700 flex items-center space-x-3 card-hover">
+                        <i class='bx bx-data text-3xl text-green-400'></i>
+                        <span>Pandas</span>
+                    </div>
+                    <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700 flex items-center space-x-3 card-hover">
+                        <i class='bx bx-line-chart text-3xl text-yellow-400'></i>
+                        <span>Matplotlib</span>
+                    </div>
+                    <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700 flex items-center space-x-3 card-hover">
+                        <i class='bx bx-brain text-3xl text-red-400'></i>
+                        <span>Scikit-learn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+  <!-- Project 1: Data Visualization Dashboard -->
+  <section id="projects" class="py-20 px-6 bg-gray-900/50 relative z-10">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 fade-in">Featured <span class="gradient-text">Projects</span></h2>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div class="fade-in">
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 card-hover h-full">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-cyan-400">Data Visualization Dashboard</h3>
+                        <p class="text-gray-300 mb-4">
+                            Developed an interactive dashboard to visualize real-world datasets such as COVID-19 statistics and sales data. The dashboard allowed users to explore trends and insights through dynamic filtering, interactive graphs, and real-time updates.
+                        </p>
+                        <a href="https://colab.research.google.com/drive/1omCUSflFJ1ddxZZxUNFp7iOGHFo2MR3u#scrollTo=MeooCJoe72K8" target="_blank"
+                            class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-1 px-3 rounded mb-4">
+                            View Project
+                        </a>
+                        <div class="mb-4">
+                            <h4 class="text-gray-400 mb-2">Technologies:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Python</span>
+                                <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Pandas</span>
+                                <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Plotly</span>
+                                <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Dash</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="fade-in">
+                <div class="bg-gray-800/50 rounded-xl overflow-hidden border border-gray-700 card-hover h-full">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-cyan-400">Sentiment Analysis on Movie Reviews</h3>
+                        <p class="text-gray-300 mb-4">
+                            Built a deep learning model using TensorFlow and NumPy to classify IMDB movie reviews as positive or negative. Demonstrates the application of NLP in understanding sentiment from human-written text.
+                        </p>
+                        <a href="https://colab.research.google.com/drive/1h2BrQD0sN6I4UVucsGYE5MqEACmbDs2O?authuser=0" target="_blank"
+                            class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-1 px-3 rounded mb-4">
+                            View Project
+                        </a>
+                        <div class="mb-4">
+                            <h4 class="text-gray-400 mb-2">Technologies:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">Python</span>
+                                <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">TensorFlow</span>
+                                <span class="px-3 py-1 bg-gray-700 rounded-full text-sm">NumPy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    
+
+    <!-- Certifications Section -->
+                    <!-- Certifications Section -->
+                    <section class="py-20 px-6 relative z-10">
+                        <div class="container mx-auto">
+                            <h2 class="text-3xl font-bold text-center mb-12 fade-in">My <span class="gradient-text">Certifications</span></h2>
+                            
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <!-- Certification 1 -->
+                                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 card-hover fade-in">
+                                    <div class="bg-gradient-to-r from-cyan-500 to-blue-600 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                                        <i class='bx bx-certification text-xl'></i>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-2">Dynamic Programming, Greedy Algorithms</h3>
+                                    <p class="text-gray-400 mb-2">Coursera</p>
+                                    <p class="text-gray-300">July 2024</p>
+                                    <a href="https://coursera.org/share/ed034e63afc4be291424b2cfa70193d5" target="_blank" 
+                                       class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-1 px-3 rounded">
+                                        View Certificate
+                                    </a>
+                                </div>
+                    
+                                <!-- Certification 2 -->
+                                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 card-hover fade-in">
+                                    <div class="bg-gradient-to-r from-cyan-500 to-blue-600 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                                        <i class='bx bx-certification text-xl'></i>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-2">Generative AI with Large Language Models</h3>
+                                    <p class="text-gray-400 mb-2">Coursera</p>
+                                    <p class="text-gray-300 mb-2">Apr 2024</p>
+                                    <a href="https://coursera.org/share/621850d21a0cbb369080a810cfe89ea8" target="_blank" 
+                                       class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-1 px-3 rounded">
+                                        View Certificate
+                                    </a>
+                                </div>
+                    
+                                <!-- Certification 3 -->
+                                <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 card-hover fade-in">
+                                    <div class="bg-gradient-to-r from-cyan-500 to-blue-600 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                                        <i class='bx bx-certification text-xl'></i>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-2">C++ Programming</h3>
+                                    <p class="text-gray-400 mb-2">Coursera</p>
+                                    <p class="text-gray-300">May 2024</p>
+                                    <a href="https://coursera.org/share/9aa3b4a1c6ffebf14f0147f04ff50375" target="_blank" 
+                                       class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-1 px-3 rounded">
+                                        View Certificate
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gray-900/50 relative z-10">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-12 fade-in">Get In <span class="gradient-text">Touch</span></h2>
+    
+            <!-- Two Column Grid -->
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Left Column: Contact Info -->
+                <div class="fade-in">
+                    <h3 class="text-xl font-semibold mb-4 text-cyan-400">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-cyan-500/10 p-3 rounded-full text-cyan-400">
+                                <i class='bx bx-envelope text-xl'></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-400">Email</h4>
+                                <a href="mailto:loki@gmail.com" class="text-gray-300 hover:text-cyan-400">loki@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-cyan-500/10 p-3 rounded-full text-cyan-400">
+                                <i class='bx bx-phone text-xl'></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-400">Phone</h4>
+                                <a href="tel:+916304555234" class="text-gray-300 hover:text-cyan-400">+91-6304557234</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-cyan-500/10 p-3 rounded-full text-cyan-400">
+                                <i class='bx bx-map text-xl'></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-400">Location</h4>
+                                <p class="text-gray-300">Visakhapatnam, Andhra Pradesh, India - 530027</p>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-cyan-400">Connect With Me</h3>
+                        <div class="flex space-x-4 flex-wrap items-center">
+                            <a href="https://www.linkedin.com/in/gavara-lokesh-kumar-b1a4b7258/" target="_blank"
+                               class="bg-gray-800/50 p-3 rounded-full border border-gray-700 hover:bg-cyan-500/10 hover:border-cyan-500 text-xl transition-colors">
+                                <i class='bx bxl-linkedin'></i>
+                            </a>
+                            <a href="https://github.com/lokesh" target="_blank"
+                               class="bg-gray-800/50 p-3 rounded-full border border-gray-700 hover:bg-cyan-500/10 hover:border-cyan-500 text-xl transition-colors">
+                                <i class='bx bxl-github'></i>
+                            </a>
+                            <!-- CV Button -->
+                            <a href="lokesh-cv.docx" download class="bg-cyan-600 hover:bg-cyan-700 text-white font-medium py-2 px-4 rounded transition-colors ml-2">
+                                <i class='bx bx-download mr-1'></i>Download CV
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Right Column: Contact Form -->
+                <div class="fade-in">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-400 mb-2">Your Name</label>
+                            <input type="text" id="name" placeholder="Name" 
+                                   class="w-full p-3 bg-gray-800/50 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-400 mb-2">Your Email</label>
+                            <input type="email" id="email" placeholder="email@example.com" 
+                                   class="w-full p-3 bg-gray-800/50 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-400 mb-2">Your Message</label>
+                            <textarea id="message" rows="5" placeholder="Hello Lokesh, I'd like to talk about..."
+                                   class="w-full p-3 bg-gray-800/50 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-cyan-500 to-blue-600 py-3 rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all transform hover:scale-[1.01] shadow-lg hover:shadow-cyan-500/20">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-gray-800 relative z-10">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-400">© 2024 Lokesh Kumar Gavara. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-cyan-600 w-12 h-12 rounded-full flex items-center justify-center text-xl opacity-0 invisible transition-all duration-300 z-50 shadow-lg hover:bg-cyan-700">
+        <i class='bx bx-chevron-up'></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuBtn.innerHTML = mobileMenu.classList.contains('hidden') ? 
+                '<i class="bx bx-menu"></i>' : '<i class="bx bx-x"></i>';
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if (this.getAttribute('href') !== '#') {
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    menuBtn.innerHTML = '<i class="bx bx-menu"></i>';
+                }
+            });
+        });
+
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate skill bars
+                    if (entry.target.id === 'skills') {
+                        document.querySelectorAll('.skill-bar').forEach(bar => {
+                            const width = bar.getAttribute('data-width');
+                            bar.style.width = width;
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Particles.js Background
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#38bdf8"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#38bdf8",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
